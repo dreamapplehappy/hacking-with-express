@@ -1,0 +1,25 @@
+{
+  "name": "hacking-with-express",
+  "version": "1.0.0",
+  "description": "learn express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamapplehappy/hacking-with-express.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "dreamapple",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreamapplehappy/hacking-with-express/issues"
+  },
+  "homepage": "https://github.com/dreamapplehappy/hacking-with-express#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
