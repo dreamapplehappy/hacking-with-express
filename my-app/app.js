@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var demo = require('./routes/demo-route');
 
 var app = express();
 
@@ -25,8 +26,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 // [@feature] 创建一个虚拟的静态路由 / 使用了绝对路径
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
+// 创建一个简单的中间件
+app.all('/', function(req, res, next) {
+  console.log('come here ...');
+  next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
+app.use('/demo', demo);
+
+// 使用 app.route
+app.route('/route')
+    .get(function(req, res) {
+      res.send('GET ROUTE');
+    })
+    .post(function(req, res) {
+      res.send('POST ROUTE');
+    })
+    .put(function(req, res) {
+      res.send('PUT ROUTE');
+    });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
