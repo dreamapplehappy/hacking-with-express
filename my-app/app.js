@@ -9,6 +9,9 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var demo = require('./routes/demo-route');
 
+// middleware 导出的是一个对象
+var myLogger = require('./middleware/logger');
+
 var app = express();
 
 // view engine setup
@@ -25,6 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // [@feature] 创建一个虚拟的静态路由 / 使用了绝对路径
 app.use('/static', express.static(path.join(__dirname, 'static')));
+
+app.use(myLogger.logger);
 
 // 创建一个简单的中间件
 app.all('/', function(req, res, next) {
