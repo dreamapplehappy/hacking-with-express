@@ -8,7 +8,11 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-    res.send('DEMO /');
+    //res.send('DEMO /');
+    res.render('demo', {
+        title: 'demo',
+        msg: 'Demo Msg'
+    })
 });
 
 router.get('/about', function(req, res) {

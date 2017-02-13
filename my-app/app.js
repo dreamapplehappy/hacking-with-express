@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var demo = require('./routes/demo-route');
+var demo = require('./routes/demo');
 
 // middleware 导出的是一个对象
 var myLogger = require('./middleware/logger');
